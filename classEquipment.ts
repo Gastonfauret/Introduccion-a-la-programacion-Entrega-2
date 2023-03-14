@@ -1,8 +1,9 @@
+const equipment: Equipment [] = [];
 export class Equipment {
     private id: string;
     private description: string;
     private dateManufacture: Date;
-    private dateInstallation: Date
+    private dateInstallation: Date;    
 
     constructor(id: string, description: string, dateManufacture: Date, dateInstallation: Date) {
         this.id = id;
@@ -11,15 +12,43 @@ export class Equipment {
         this.dateInstallation = dateInstallation
     }
 
-    consultEquiment(id:string) {        
+    consultEquipment(id:string, equipment: Equipment[]) { 
+        let foundId: any = equipment.filter((element: any) => element.id === id); 
+        if (foundId.length) {
+            console.log(`The Id: ${this.id} was found in data base`);
+        } else {
+            console.log(`The Id: ${this.id} couldn't be found in data base`);            
+        }     
     }
 
-    addEquiment(id: string, description: string, dateManufacture: Date, dateInstallation: Date) {
+    addEquiment(equipment, newEquipment: Equipment) {
+        if (equipment.push) {
+            console.log(`The new equipment has been successfully added.`, newEquipment);
+        } else {
+            console.log(`The new equipment couldn't be added.`);
+        }
     }
 
-    editEquiment(id: string, description: string, dateManufacture: Date, dateInstallation: Date) {
+    editEquiment(id: string, equipment, data: string) {
+        const modifiedId: any = this.consultEquipment(id, equipment);
+        if (modifiedId) {
+            modifiedId.id = data;
+            console.log(`The id "${id}" has been modified. Now, its identified as "${data}"`);            
+        } else {
+            console.log(`The id "${id}" couldn't be modify.`);
+            
+        }
     }
 
-    deleteEquiment(id: string){
+    deleteEquipment(id: string, equipment){
+        let index: number = equipment.length;
+        while (index > 0) {
+            const deleteId: number = equipment.findIndex((element: any) => element.id === id);
+            if (deleteId >= 0) {
+                equipment.splice(deleteId, 1);
+                console.log(`The Id: '${id}' has been deleted sucesfully.`);                
+            }
+        index--;
+        }
     }
 }

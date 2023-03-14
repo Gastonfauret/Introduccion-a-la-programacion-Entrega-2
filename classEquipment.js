@@ -10,12 +10,12 @@ var Equipment = /** @class */ (function () {
         this.dateInstallation = dateInstallation;
     }
     Equipment.prototype.consultEquipment = function (id, equipment) {
-        var foundId = equipment.filter(function (element) { return element.id === id; });
+        var foundId = equipment.filter(function (id) { return id === id; });
         if (foundId.length) {
-            console.log("The Id: ".concat(this.id, " was found in data base"));
+            console.log("The Id: ".concat(id, " was found in data base"));
         }
         else {
-            console.log("The Id: ".concat(this.id, " couldn't be found in data base"));
+            console.log("The Id: ".concat(id, " couldn't be found in data base"));
         }
     };
     Equipment.prototype.addEquiment = function (equipment, newEquipment) {

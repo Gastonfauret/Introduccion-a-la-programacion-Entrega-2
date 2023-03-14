@@ -4,8 +4,12 @@ var classEquipment_1 = require("./classEquipment");
 var date = new Date();
 var equipment = [];
 var motor = new classEquipment_1.Equipment('001', 'Motor', date, date);
+var motor1 = new classEquipment_1.Equipment('002', 'Motor2', date, date);
+var motor2 = new classEquipment_1.Equipment('003', 'Motor3', date, date);
 // console.log(motor);
 motor.addEquiment(equipment, motor);
+motor.addEquiment(equipment, motor1);
+motor.addEquiment(equipment, motor2);
 motor.consultEquipment('001', equipment);
 // motor.editEquiment('001', equipment, '002');
 // motor.consultEquipment('Motor', equipment)

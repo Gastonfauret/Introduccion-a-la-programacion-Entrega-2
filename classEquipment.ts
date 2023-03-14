@@ -13,11 +13,11 @@ export class Equipment {
     }
 
     consultEquipment(id:string, equipment: Equipment[]) { 
-        let foundId: any = equipment.filter((element: any) => element.id === id); 
+        let foundId: Equipment[] = equipment.filter((file: any) => file.id === id); 
         if (foundId.length) {
-            console.log(`The Id: ${this.id} was found in data base`);
+            console.log(`The Id: ${id} was found in data base`);
         } else {
-            console.log(`The Id: ${this.id} couldn't be found in data base`);            
+            console.log(`The Id: ${id} couldn't be found in data base`);            
         }     
     }
 

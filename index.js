@@ -10,7 +10,8 @@ var motor2 = new classEquipment_1.Equipment('003', 'Motor3', date, date);
 motor.addEquiment(equipment, motor);
 motor.addEquiment(equipment, motor1);
 motor.addEquiment(equipment, motor2);
-motor.consultEquipment('001', equipment);
-// motor.editEquiment('001', equipment, '002');
+// motor.consultEquipment('002', equipment)
+// motor.deleteEquipment('003', equipment)
+motor.editEquipment('001', equipment, '00022');
 // motor.consultEquipment('Motor', equipment)
-// console.log(equipment);
+console.log(equipment);

@@ -15,8 +15,9 @@ const motor2 = new Equipment('003', 'Motor3', date, date)
 motor.addEquiment(equipment, motor);
 motor.addEquiment(equipment, motor1);
 motor.addEquiment(equipment, motor2);
-motor.consultEquipment('002', equipment)
-motor.deleteEquipment('003', equipment)
+motor.editEquipment('001', equipment, '0010');
+// motor.consultEquipment('002', equipment);
+// motor.deleteEquipment('003', equipment);
 
 console.log(equipment);
 

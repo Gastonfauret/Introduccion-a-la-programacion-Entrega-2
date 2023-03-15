@@ -31,16 +31,20 @@ export class Equipment {
         }
     }
 
-    // editEquipment(id: string, equipment, data: string) {
-    //     let modifiedId = equipment.filter((file: any) => file.id === id);
-    //     // const modifiedId: any = this.consultEquipment(id, equipment);
-    //     if (modifiedId.length) {
-    //         modifiedId.id = data;
-    //         console.log(`The id "${id}" has been modified. Now, its identified as "${data}"`);
-    //         } else {
-    //         console.log(`The id "${id}" couldn't be modify.`);            
+    editEquipment(id: string, equipment, data: string) {
+        equipment.map(function(element) { 
+            if(element.id === id) {
+                element.id = data; 
+                console.log(`The id ${id} has been modified. The new id its ${data}`);
+                } 
+            }        
+        )
+    }
+
+    // autos.map(function(dato){
+    //     if(dato.Modelo == modelo){
+    //       dato.Precio = precioDescuento;
     //     }
-    // }
 
     deleteEquipment(id: string, equipment){
         let index: number = equipment.length;

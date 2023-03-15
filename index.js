@@ -6,12 +6,10 @@ var equipment = [];
 var motor = new classEquipment_1.Equipment('001', 'Motor', date, date);
 var motor1 = new classEquipment_1.Equipment('002', 'Motor2', date, date);
 var motor2 = new classEquipment_1.Equipment('003', 'Motor3', date, date);
-// console.log(motor);
 motor.addEquiment(equipment, motor);
 motor.addEquiment(equipment, motor1);
 motor.addEquiment(equipment, motor2);
-// motor.consultEquipment('002', equipment)
-// motor.deleteEquipment('003', equipment)
-motor.editEquipment('001', equipment, '00022');
-// motor.consultEquipment('Motor', equipment)
+motor.editEquipment('001', equipment, '0010');
+// motor.consultEquipment('002', equipment);
+// motor.deleteEquipment('003', equipment);
 console.log(equipment);

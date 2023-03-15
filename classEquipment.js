@@ -29,16 +29,20 @@ var Equipment = /** @class */ (function () {
         }
     };
     Equipment.prototype.editEquipment = function (id, equipment, data) {
-        var modifiedId = equipment.filter(function (file) { return file.id === id; });
-        // const modifiedId: any = this.consultEquipment(id, equipment);
-        if (modifiedId.length) {
-            modifiedId.id = data;
-            console.log("The id \"".concat(id, "\" has been modified. Now, its identified as \"").concat(data, "\""));
-        }
-        else {
-            console.log("The id \"".concat(id, "\" couldn't be modify."));
-        }
+        equipment.map(function (element) {
+            if (element.id === id) {
+                element.id = data;
+                console.log("The id ".concat(id, " has been modified. The new id its ").concat(data));
+            }
+            // else {
+            //     console.log(`The id couldn't be modified`);                
+            // }
+        });
     };
+    // autos.map(function(dato){
+    //     if(dato.Modelo == modelo){
+    //       dato.Precio = precioDescuento;
+    //     }
     Equipment.prototype.deleteEquipment = function (id, equipment) {
         var index = equipment.length;
         while (index > 0) {

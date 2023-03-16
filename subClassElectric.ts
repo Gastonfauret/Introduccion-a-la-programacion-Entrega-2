@@ -1,23 +1,15 @@
-import { Engine } from "./subClaseMotor";
-
-export class Electric extends Engine {
+import { Engine } from "./subClaseEngine";
+import { Equipment } from "./classEquipment";
+export class Electric {
+    private id: string;
     private voltage: number;
     private consumptionKwH: number;
     private isLowConsumption: boolean
     
-    constructor (id, voltage, consumptionKwH, isLowConsumption) {
-        super(id, voltage, consumptionKwH, isLowConsumption)       
-    }
-
-    consultElectric(id:string) {        
-    }
-
-    addElectric(id: string, cylinders: number, fuelType: Enumerator) {
-    }
-
-    editElectric(id: string, cylinders: number, fuelType: Enumerator) {
-    }
-
-    deleteElectric(id: string){
-    }
+    constructor (id: string, voltage: number, consumptionKwH: number, isLowConsumption: boolean) {
+        this.id = id;    
+        this.voltage = voltage; 
+        this.consumptionKwH = consumptionKwH; 
+        this.isLowConsumption = isLowConsumption;    
+    }   
 }

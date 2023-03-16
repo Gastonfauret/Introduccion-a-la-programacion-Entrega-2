@@ -1,15 +1,26 @@
+import { Pump } from "./subClassPump";
+import { Engine } from "./subClaseEngine";
+import { Hoses } from "./subClassHoses";
+
 const equipment: Equipment [] = [];
+
 export class Equipment {
     private id: string;
     private description: string;
     private dateManufacture: Date;
-    private dateInstallation: Date;    
+    private dateInstallation: Date;
+    private pump: Pump;
+    private engine: Engine; 
+    private hoses: Hoses;   
 
-    constructor(id: string, description: string, dateManufacture: Date, dateInstallation: Date) {
+    constructor(id: string, description: string, dateManufacture: Date, dateInstallation: Date, pump: Pump, engine: Engine, hoses: Hoses) {
         this.id = id;
         this.description = description;
         this.dateManufacture = dateManufacture;
         this.dateInstallation = dateInstallation
+        this.pump = pump;
+        this.engine = engine;
+        this.hoses = hoses;
     }
 
     consultEquipment(id:string, equipment: Equipment[]) { 
@@ -40,11 +51,6 @@ export class Equipment {
             }        
         )
     }
-
-    // autos.map(function(dato){
-    //     if(dato.Modelo == modelo){
-    //       dato.Precio = precioDescuento;
-    //     }
 
     deleteEquipment(id: string, equipment){
         let index: number = equipment.length;

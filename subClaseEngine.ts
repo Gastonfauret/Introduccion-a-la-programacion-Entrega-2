@@ -1,22 +1,24 @@
 import { Equipment } from "./classEquipment";
+import { Hoses } from "./subClassHoses";
+import { Pump } from "./subClassPump";
 
-export class Engine extends Equipment {
+enum Level {
+    low = 'Low',
+    regular = 'Regular',
+    good = 'Good',
+    veryGood = 'Very Good',
+    excelent = 'Excelent'
+}
+
+export class Engine {
+    private id: string;
     private powerHP: number;
-    private efficiency: Enumerator;
+    private efficiency: Level
     private manufacturer: string
-    constructor (id, powerHP, efficiency, manufacturer) {
-        super(id, powerHP, efficiency, manufacturer)       
-    }
-
-    consultPump(id:string) {        
-    }
-
-    addPump(id: string, powerHP: number, efficiency: Enumerator, manufacturer: string) {
-    }
-
-    editPump(id: string, powerHP: number, efficiency: Enumerator, manufacturer: string) {
-    }
-
-    deletePump(id: string){
+    constructor (id: string, powerHP: number, efficiency: Level, manufacturer: string) {
+        this.id = id;
+        this.powerHP = powerHP;
+        this.efficiency = efficiency;
+        this.manufacturer = manufacturer;
     }
 }

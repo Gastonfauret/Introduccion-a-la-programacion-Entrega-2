@@ -1,22 +1,22 @@
 import { Equipment } from "./classEquipment";
+import { Pump } from "./subClassPump";
+import { Engine } from "./subClaseEngine";
 
-export class Hoses extends Equipment {
+enum Materials {
+    Plastic,
+    Iron,
+    Wood
+}
+
+export class Hoses {
+    private id: string;
     private elements: number;
     private size: number;
-    private threadMaterial: Enumerator;
-    constructor (id, elements, size, threadMaterial) {
-        super(id, elements, size, threadMaterial)       
-    }
-
-    consultPump(id:string) {        
-    }
-
-    addPump(id: string, elements: number, size: number, threadMaterial: Enumerator) {
-    }
-
-    editPump(id: string, elements: number, size: number, threadMaterial: Enumerator) {
-    }
-
-    deletePump(id: string){
+    private threadMaterial: Materials;
+    constructor (id: string, elements: number, size: number, threadMaterial: Materials) { 
+        this.id = id;       
+        this.elements = elements;
+        this.size = size,
+        this.threadMaterial = threadMaterial;
     }
 }

@@ -1,23 +1,20 @@
 import { Engine } from "./subClaseEngine";
+import { Equipment } from "./classEquipment";
 
-export class Fuel extends Engine {
+enum fuelType {
+    Oil,
+    Gas,
+    CompressAir,
+    water
+}
+
+export class Fuel  {
+    private id: string;
     private cylinders: number;
-    private fuelType: number;
-    constructor (id, cylinders, fuelType) {
-        super(id, cylinders, fuelType, );
+    private fuelType: Enumerator;
+    constructor (id: string, cylinders: number, fuelType: fuelType) {
+        this.id = id;
         this.cylinders = cylinders;
-        this.fuelType = fuelType;     
-    }
-
-    consultPump(id:string) {        
-    }
-
-    addPump(id: string, cylinders: number, fuelType: Enumerator) {
-    }
-
-    editPump(id: string, cylinders: number, fuelType: Enumerator) {
-    }
-
-    deletePump(id: string){
+        this.fuelType;     
     }
 }

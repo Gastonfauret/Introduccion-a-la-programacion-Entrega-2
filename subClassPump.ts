@@ -1,22 +1,17 @@
 import { Equipment } from "./classEquipment";
+import { Engine } from "./subClaseEngine";
+import { Hoses } from "./subClassHoses";
 
-export class Pump extends Equipment {
+export class Pump {
+    private id: string;
     private inletFlow: number;
     private outpuFlow: number;
     private manufacturer: string
-    constructor (id, inletFlow, outpuFlow, manufacturer) {
-        super(id, inletFlow, outpuFlow, manufacturer)       
-    }
 
-    consultPump(id:string) {        
-    }
-
-    addPump(id: string, inletFlow: number, outpuFlow: number, manufacturer: string) {
-    }
-
-    editPump(id: string, inletFlow: number, outpuFlow: number, manufacturer: string) {
-    }
-
-    deletePump(id: string){
+    constructor (id: string, inletFlow: number, outpuFlow: number, manufacturer: string) {
+        this.id = id;
+        this.inletFlow = inletFlow;
+        this.outpuFlow = outpuFlow;
+        this.manufacturer = manufacturer;    
     }
 }

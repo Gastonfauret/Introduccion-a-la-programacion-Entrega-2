@@ -3,11 +3,14 @@ exports.__esModule = true;
 exports.Equipment = void 0;
 var equipment = [];
 var Equipment = /** @class */ (function () {
-    function Equipment(id, description, dateManufacture, dateInstallation) {
+    function Equipment(id, description, dateManufacture, dateInstallation, pump, engine, hoses) {
         this.id = id;
         this.description = description;
         this.dateManufacture = dateManufacture;
         this.dateInstallation = dateInstallation;
+        this.pump = pump;
+        this.engine = engine;
+        this.hoses = hoses;
     }
     Equipment.prototype.consultEquipment = function (id, equipment) {
         var foundId = equipment.filter(function (file) { return file.id === id; });
@@ -34,15 +37,8 @@ var Equipment = /** @class */ (function () {
                 element.id = data;
                 console.log("The id ".concat(id, " has been modified. The new id its ").concat(data));
             }
-            // else {
-            //     console.log(`The id couldn't be modified`);                
-            // }
         });
     };
-    // autos.map(function(dato){
-    //     if(dato.Modelo == modelo){
-    //       dato.Precio = precioDescuento;
-    //     }
     Equipment.prototype.deleteEquipment = function (id, equipment) {
         var index = equipment.length;
         while (index > 0) {

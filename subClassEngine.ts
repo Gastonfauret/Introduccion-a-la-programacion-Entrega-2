@@ -1,4 +1,6 @@
 import { Equipment } from "./classEquipment";
+import { Fuel } from "./subClassFuel";
+import { Electric } from "./subClassElectric";
 import { Hoses } from "./subClassHoses";
 import { Pump } from "./subClassPump";
 
@@ -15,10 +17,15 @@ export class Engine {
     private powerHP: number;
     private efficiency: Level
     private manufacturer: string
-    constructor (id: string, powerHP: number, efficiency: Level, manufacturer: string) {
+    private electric: Electric;
+    private fuel: Fuel;
+
+    constructor (id: string, powerHP: number, efficiency: Level, manufacturer: string, electric: Electric, fuel: Fuel) {
         this.id = id;
         this.powerHP = powerHP;
         this.efficiency = efficiency;
         this.manufacturer = manufacturer;
+        this.electric = electric;
+        this.fuel = fuel;
     }
 }

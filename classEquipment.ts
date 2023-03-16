@@ -1,6 +1,8 @@
 import { Pump } from "./subClassPump";
-import { Engine } from "./subClaseEngine";
+import { Engine } from "./subClassEngine";
 import { Hoses } from "./subClassHoses";
+import { Electric } from "./subClassElectric";
+import * as fs from "fs";
 
 const equipment: Equipment [] = [];
 
@@ -11,8 +13,8 @@ export class Equipment {
     private dateInstallation: Date;
     private pump: Pump;
     private engine: Engine; 
-    private hoses: Hoses;   
-
+    private hoses: Hoses;  
+    
     constructor(id: string, description: string, dateManufacture: Date, dateInstallation: Date, pump: Pump, engine: Engine, hoses: Hoses) {
         this.id = id;
         this.description = description;
@@ -34,7 +36,7 @@ export class Equipment {
         }     
     }
 
-    addEquiment(equipment, newEquipment: Equipment) {
+    addEquipment(equipment, newEquipment: Equipment) {
         if (equipment.push(newEquipment)) {
             console.log(`The new equipment has been successfully added.`, newEquipment);
         } else {
@@ -62,5 +64,10 @@ export class Equipment {
             }
         index--;
         }
+    }
+
+    arrayAJason(equipment) {
+        const updateEquipment = JSON.stringify(equipment);
+        fs.writeFileSync('./equipmentFile.json', updateEquipment, 'utf-8')
     }
 }

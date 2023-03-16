@@ -1,4 +1,4 @@
-import { Engine } from "./subClaseEngine";
+import { Engine } from "./subClassEngine";
 import { Equipment } from "./classEquipment";
 export class Electric {
     private id: string;

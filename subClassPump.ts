@@ -1,5 +1,5 @@
 import { Equipment } from "./classEquipment";
-import { Engine } from "./subClaseEngine";
+import { Engine } from "./subClassEngine";
 import { Hoses } from "./subClassHoses";
 
 export class Pump {

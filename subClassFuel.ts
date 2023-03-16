@@ -1,4 +1,4 @@
-import { Engine } from "./subClaseEngine";
+import { Engine } from "./subClassEngine";
 import { Equipment } from "./classEquipment";
 
 enum fuelType {
@@ -10,11 +10,11 @@ enum fuelType {
 
 export class Fuel  {
     private id: string;
-    private cylinders: number;
-    private fuelType: Enumerator;
+    private cylinders: fuelType;
+    private fuelType: fuelType;
     constructor (id: string, cylinders: number, fuelType: fuelType) {
         this.id = id;
         this.cylinders = cylinders;
-        this.fuelType;     
+        this.fuelType = fuelType;     
     }
 }

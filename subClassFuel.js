@@ -12,7 +12,7 @@ var Fuel = /** @class */ (function () {
     function Fuel(id, cylinders, fuelType) {
         this.id = id;
         this.cylinders = cylinders;
-        this.fuelType;
+        this.fuelType = fuelType;
     }
     return Fuel;
 }());

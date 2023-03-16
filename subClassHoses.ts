@@ -1,6 +1,6 @@
 import { Equipment } from "./classEquipment";
 import { Pump } from "./subClassPump";
-import { Engine } from "./subClaseEngine";
+import { Engine } from "./subClassEngine";
 
 enum Materials {
     Plastic,

@@ -10,11 +10,13 @@ var Level;
     Level["excelent"] = "Excelent";
 })(Level || (Level = {}));
 var Engine = /** @class */ (function () {
-    function Engine(id, powerHP, efficiency, manufacturer) {
+    function Engine(id, powerHP, efficiency, manufacturer, electric, fuel) {
         this.id = id;
         this.powerHP = powerHP;
         this.efficiency = efficiency;
         this.manufacturer = manufacturer;
+        this.electric = electric;
+        this.fuel = fuel;
     }
     return Engine;
 }());

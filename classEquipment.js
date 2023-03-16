@@ -1,6 +1,7 @@
 "use strict";
 exports.__esModule = true;
 exports.Equipment = void 0;
+var fs = require("fs");
 var equipment = [];
 var Equipment = /** @class */ (function () {
     function Equipment(id, description, dateManufacture, dateInstallation, pump, engine, hoses) {
@@ -23,7 +24,7 @@ var Equipment = /** @class */ (function () {
             console.log("The Id: ".concat(id, " couldn't be found in data base"));
         }
     };
-    Equipment.prototype.addEquiment = function (equipment, newEquipment) {
+    Equipment.prototype.addEquipment = function (equipment, newEquipment) {
         if (equipment.push(newEquipment)) {
             console.log("The new equipment has been successfully added.", newEquipment);
         }
@@ -49,6 +50,10 @@ var Equipment = /** @class */ (function () {
             }
             index--;
         }
+    };
+    Equipment.prototype.arrayAJason = function (equipment) {
+        var updateEquipment = JSON.stringify(equipment);
+        fs.writeFileSync('./equipmentFile.json', updateEquipment, 'utf-8');
     };
     return Equipment;
 }());
